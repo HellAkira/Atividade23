@@ -10,7 +10,7 @@
 		<properties>
 			<property name="javax.persistence.jdbc.url"
 				value="jdbc:sqlserver://localhost:1433;databaseName=CapacitacaoPSG2021H3;" />
-			<property name="javax.persistence.jdbc.user" value="testeDois" />
+			<property name="javax.persistence.jdbc.user" value="teste" />
 			<property name="javax.persistence.jdbc.driver"
 				value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
 			<property name="javax.persistence.jdbc.password" value="senha123" />
@@ -21,4 +21,4 @@
 
 		</properties>
 	</persistence-unit>
-</persistence>  
+</persistence>

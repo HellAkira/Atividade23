@@ -12,29 +12,41 @@ import javax.persistence.Id;
 public class SubCategoria {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "SubCategoriaID")
 	private Integer subCategoriaID;
-	
+
+	@Column(name = "CategoriaID")
+	private Integer categoriaID;
+
 	@Column(name = "Descricao")
 	private String descricao;
-	
+
 	@Column(name = "DataInsert")
 	private Date dataDeInsercao;
-	
-	@Override
-	public String toString() {
-		return "SubCategoria [SubCategoriaID=" + subCategoriaID + ", descricao=" + descricao + ", dataDeInsercao="
-				+ dataDeInsercao + "]";
-	}
+
 	public SubCategoria() {
-		
+
 	}
-	public SubCategoria(Integer subCategoriaID, String descricao, Date dataDeInsercao) {
-		super();
+
+	public SubCategoria(Integer subCategoriaID, Integer categoriaID, String descricao, Date dataDeInsercao) {
+
 		this.subCategoriaID = subCategoriaID;
+		this.categoriaID = categoriaID;
 		this.descricao = descricao;
 		this.dataDeInsercao = dataDeInsercao;
+	}
+
+	public Integer getCategoriaID() {
+		return categoriaID;
+	}
+
+	public void setCategoriaID(Integer categoriaID) {
+		this.categoriaID = categoriaID;
+	}
+
+	public void setSubCategoriaID(Integer subCategoriaID) {
+		this.subCategoriaID = subCategoriaID;
 	}
 
 	public Integer getSubCategoriaID() {
@@ -61,4 +73,9 @@ public class SubCategoria {
 		this.dataDeInsercao = dataDeInsercao;
 	}
 
+	@Override
+	public String toString() {
+		return "SubCategoria [subCategoriaID=" + subCategoriaID + ", categoriaID=" + categoriaID + ", descricao="
+				+ descricao + ", dataDeInsercao=" + dataDeInsercao + "]";
+	}
 }

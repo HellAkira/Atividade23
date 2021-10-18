@@ -16,25 +16,25 @@ package Servico;
 
 		}
 
-		public void alterar(SubCategoria cat) {
+		public void alterar(SubCategoria subCat) {
 			
-			repo.update(cat);
-			
-		}
-
-		public void excluir(SubCategoria cat) {
-			
-			repo.delete(cat.getSubCategoriaID());
+			repo.update(subCat);
 			
 		}
 
-		public void excluirPorID(int id) {
+		public void excluir(SubCategoria subCat) {
+			
+			repo.delete(subCat.getSubCategoriaID());
+			
+		}
+
+		public void excluirPorID(Integer id) {
 			repo.delete(id);
 		}
 		
-		public void inserir(int id) {
+		public void inserir(SubCategoria subCategoria) {
 			
-			SubCategoria c = new SubCategoria(id, "teste", new Date());
+			SubCategoria c = new SubCategoria(subCategoria.getSubCategoriaID(), subCategoria.getCategoriaID(), subCategoria.getDescricao(), new Date());
 			repo.create(c);
 			
 		}
@@ -45,7 +45,7 @@ package Servico;
 			
 		}
 
-		public SubCategoria obter(int id) {
+		public SubCategoria obter(Integer id) {
 
 			return repo.read(id);
 

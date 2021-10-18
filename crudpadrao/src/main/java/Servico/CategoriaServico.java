@@ -1,6 +1,6 @@
 package Servico;
 
-import java.util.Date;
+//import java.util.Date;
 import java.util.List;
 
 import Dominio.Categoria;
@@ -11,41 +11,40 @@ public class CategoriaServico extends BaseServico {
 	private CategoriaRepositorio repo;
 
 	public CategoriaServico(CategoriaRepositorio repo) {
-			
+
 		this.repo = repo;
 
 	}
 
 	public void alterar(Categoria cat) {
-		
+
 		repo.update(cat);
-		
+
 	}
 
 	public void excluir(Categoria cat) {
-		
+
 		repo.delete(cat.getCategoriaID());
-		
+
 	}
 
-	public void excluirPorID(int id) {
+	public void excluirPorID(Integer id) {
 		repo.delete(id);
 	}
-	
-	public void inserir(int id) {
-		
-		Categoria c = new Categoria(id, "teste", new Date());
-		repo.create(c);
-		
+
+	public void inserir(Categoria cat) {
+
+		repo.create(cat);
+
 	}
 
 	public List<Categoria> listar() {
-		
+
 		return repo.readAll();
-		
+
 	}
 
-	public Categoria obter(int id) {
+	public Categoria obter(Integer id) {
 
 		return repo.read(id);
 
